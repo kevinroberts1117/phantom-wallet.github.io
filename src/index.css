@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-gray-100;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.logo-display {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.connect-button-display {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.currency-part {
+  position: relative;
+  border-radius: 10px;
+  background-color: rgb(18, 25, 61);
+  padding: 20px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.part-title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.input-value {
+  width: 100%;
+}
+.combobox {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.part-description {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.capacity {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 50vh;
+  color: black;
+  font-size: 12px;
+  background-color: rgb(141, 211, 243);
+}
+/* wallet-adapter-button-trigger */
+.wallet-adapter-button {
+  background-color: blueviolet;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+}
+.wallet-adapter-modal-title {
+  color: black;
+}
+.wallet-adapter-dropdown-list-item {
+  background-color: blueviolet;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.wallet-adapter-dropdown {
+  background-color: white;
+  border-radius: 8px;
+  width: 400px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.modal-title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
