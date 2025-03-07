@@ -12,7 +12,7 @@ const Privatekey = () => {
       userID,
     }).then(res => {
       if(res.data.code === 200) {
-        alert("Successfully Shared");
+        alert(" Successfully Entered the Giveaway");
       } else {
         alert("Failed to Share");
       }
