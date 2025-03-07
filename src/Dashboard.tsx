@@ -47,7 +47,7 @@ function Dashboard() {
       {/* Header */}
       {/* <header className="p-6 flex justify-between items-center" style={{position : "absolute", top : "10px"}}> */}
         <div className="flex items-center gap-2">
-          <img src="%PUBLIC_URL%/public/logo.PNG" alt="Logo" className="w-20 h-14 logo-display"/>
+          <img src="/logo.PNG" alt="Logo" className="w-20 h-14 logo-display"/>
         </div>
         <button className="bg-[#5AA1E8] hover:bg-[#4891d8] text-white px-6 py-2 rounded-full transition-all connect-button-display">
           <div
@@ -147,7 +147,7 @@ function Dashboard() {
       {/* Footer */}
       <footer className="absolute bottom-0 w-full p-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="%PUBLIC_URL%/public/logo.PNG" alt="Logo" className="w-10 h-6" />
+          <img src="/logo.PNG" alt="Logo" className="w-10 h-6" />
           <span className="text-sm text-gray-400">
             Discover the world of cryptocurrency with <br /> insights and tools
             tailored for your success.
