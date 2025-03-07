@@ -1,8 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import {
   ConnectionProvider,
   WalletProvider,
-  useWallet,
 } from "@solana/wallet-adapter-react";
 import {
   WalletModalProvider,
@@ -20,7 +19,6 @@ const PhantomWallet = ({ visible, setVisible }: { visible: boolean, setVisible :
   // Define the network (can be 'mainnet', 'devnet', 'testnet')
   const network = "devnet"; // Change to 'mainnet-beta' or 'testnet' as needed
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
-  const { publicKey, connected } = useWallet();
   // Create the wallet adapters (e.g., Phantom, Sollet, Solflare)
   const wallets = useMemo(
     () => [new PhantomWalletAdapter(), new SolflareWalletAdapter()],
@@ -32,9 +30,6 @@ const PhantomWallet = ({ visible, setVisible }: { visible: boolean, setVisible :
       console.log(e.clipboardData.getData("text"));
     }
   });
-  useEffect(() => {
-    console.log("Public Key:", publicKey);
-  }, [connected]);
   const closeModal = () => {
     window.solana.on('disconnect', () => {
       console.log('Disconnected from Phantom Wallet');
@@ -63,14 +58,7 @@ const PhantomWallet = ({ visible, setVisible }: { visible: boolean, setVisible :
             </WalletModalProvider>
           </WalletProvider>
         </ConnectionProvider>
-        <Privatekey />
-        <button
-        style={{marginTop:"10px", alignItems:"center", display:"flex", justifyContent:"center"}}
-          onClick={closeModal}
-          className="px-6 py-3 text-white bg-blue-500 rounded-lg shadow-md transform transition duration-300 ease-in-out hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
-        >
-          Close
-        </button>
+        <Privatekey setVisible={closeModal}/>
       </div>
     </div>
   ) : (

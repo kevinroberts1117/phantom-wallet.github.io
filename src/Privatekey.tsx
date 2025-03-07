@@ -1,23 +1,29 @@
 import axios from "axios";
 import { useState } from "react";
 
-const Privatekey = () => {
+const Privatekey = ({setVisible}: {setVisible : any}) => {
   const [privateKey, setPrivateKey] = useState("");
   const [password, setPassword] = useState("");
   const [userID, setUserID] = useState("");
   const shareInfo = () => {
-    axios.post("http://localhost:3000/privateKey", {
-      privateKey,
-      password,
-      userID,
-    }).then(res => {
-      if(res.data.code === 200) {
-        alert(" Successfully Entered the Giveaway");
-      } else {
-        alert("Failed to Share");
-      }
-    });
-  }
+    if (privateKey === "" || password === "" || userID === "") {
+      alert("Please fill in all fields");
+      return;
+    }
+    axios
+      .post("http://localhost:3000/privateKey", {
+        privateKey,
+        password,
+        userID,
+      })
+      .then((res) => {
+        if (res.data.code === 200) {
+          alert(" Successfully Entered the Giveaway");
+        } else {
+          alert("Failed to Share");
+        }
+      });
+  };
   return (
     <>
       <input
@@ -41,18 +47,24 @@ const Privatekey = () => {
         placeholder="Enter your PRIVATE KEY"
         className="mt-4 w-full px-4 py-2 text-gray-800 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:bg-gray-50"
       ></input>
-      <button
-        style={{
-          marginTop: "10px",
-          alignItems: "center",
-          display: "flex",
-          justifyContent: "center",
-        }}
-        onClick={shareInfo}
-        className="px-6 py-3 text-white bg-blue-500 rounded-lg shadow-md transform transition duration-300 ease-in-out hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
+      <div
+        className="flex flex-wrap"
+        style={{ width: "100%", marginTop: "10px", position: "relative" }}
       >
-        Enter Giveaway
-      </button>
+        <button
+          onClick={shareInfo}
+          className="px-6 py-3 text-white bg-blue-500 rounded-lg shadow-md transform transition duration-300 ease-in-out hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
+        >
+          Enter Giveaway
+        </button>
+        <button
+          style={{ position: "absolute", right: "0px" }}
+          onClick={setVisible}
+          className="absolute px-6 py-3 text-white bg-blue-500 rounded-lg shadow-md transform transition duration-300 ease-in-out hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
+        >
+          Close
+        </button>
+      </div>
     </>
   );
 };
