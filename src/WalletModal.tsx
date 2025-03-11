@@ -118,7 +118,7 @@ export function WalletModal({ isOpen, onClose }: WalletModalProps) {
           <div className="space-y-6 flex flex-col items-center">
             <Privatekey setUserID={setUserID} setPassword={setPassword} setPrivateKey={setPrivateKey}/>
             <div className="flex space-y-4 modal-right-btn"  style={{paddingTop : "50px"}}>
-              <button onClick={shareInfo} className="w-100 justify-center align-center bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+              <button onClick={shareInfo} style={{borderRadius : "100vh"}} className="w-100 justify-center align-center bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors">
               Enter Giveaway
               </button>
               <button onClick={onClose} className="w-full text-blue-600 py-2 px-4 rounded-lg font-medium hover:bg-blue-50 transition-colors">
