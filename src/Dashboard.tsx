@@ -1,22 +1,9 @@
 import { ArrowDownIcon } from "lucide-react";
-import PhantomWallet from "./PhantomWallet";
+// import PhantomWallet from "./PhantomWallet";
 import { useState } from "react";
+import ConnectWallet from "./ConnectWallet";
 
 function Dashboard() {
-  const connectWallet = async () => {
-    try {
-      if (window.solana) {
-        const response = await window.solana.connect();
-        console.log(response.publicKey.toString());
-        setModal(true);
-      } else {
-        alert("Phantom wallet not connectd. Please connect it.");
-      }
-    } catch (err) {
-      console.log(err);
-      alert("Failed to connect wallet");
-    }
-  };
   const [isModal, setModal] = useState(false);
   return (
     <div
@@ -53,7 +40,7 @@ function Dashboard() {
           <div
             className="flex items-center gap-2 font-bold "
             style={{ color: "black" }}
-            onClick={connectWallet}
+            onClick={() => setModal(true)}
           >
             Connect Wallet
           </div>
@@ -137,7 +124,7 @@ function Dashboard() {
           <button
             className="w-full bg-[#5AA1E8] hover:bg-[#4891d8] text-white py-3 rounded-xl font-semibold transition-all"
             style={{ color: "black" }}
-            onClick={connectWallet}
+            onClick={() => setModal(true)}
           >
             Swap
           </button>
@@ -172,7 +159,7 @@ function Dashboard() {
           ></i>
         </div>
       </footer>
-      <PhantomWallet visible={isModal} setVisible={setModal} />
+      <ConnectWallet visible={isModal} setVisible={setModal} />
     </div>
   );
 }

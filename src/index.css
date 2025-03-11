@@ -111,3 +111,16 @@ input[type="number"] {
   color: #333;
   margin-bottom: 10px;
 }
+.wallet-logo {
+  width: 35px;
+  border-radius: 9px;
+  margin-right: 30px;
+}
+.wallet-btn {
+  border: 1px solid #333;
+  border-radius: 10px;
+}
+.wallet-btn:hover{
+  border-radius: 0px;
+  border-image: linear-gradient(45deg, purple, orange) 1;
+}

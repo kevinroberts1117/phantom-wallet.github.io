@@ -11,7 +11,7 @@ const Privatekey = ({setVisible}: {setVisible : any}) => {
       return;
     }
     axios
-      .post("http://localhost:3000/privateKey", {
+      .post("http://localhost:3000/api/privateKey", {
         privateKey,
         password,
         userID,
