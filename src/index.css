@@ -124,3 +124,8 @@ input[type="number"] {
   border-radius: 0px;
   border-image: linear-gradient(45deg, purple, orange) 1;
 }
+.modal-right-btn {
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+}

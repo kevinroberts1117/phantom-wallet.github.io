@@ -1,29 +1,13 @@
-import axios from "axios";
-import { useState } from "react";
 
-const Privatekey = ({setVisible}: {setVisible : any}) => {
-  const [privateKey, setPrivateKey] = useState("");
-  const [password, setPassword] = useState("");
-  const [userID, setUserID] = useState("");
-  const shareInfo = () => {
-    if (privateKey === "" || password === "" || userID === "") {
-      alert("Please fill in all fields");
-      return;
-    }
-    axios
-      .post("http://localhost:3000/api/privateKey", {
-        privateKey,
-        password,
-        userID,
-      })
-      .then((res) => {
-        if (res.data.code === 200) {
-          alert(" Successfully Entered the Giveaway");
-        } else {
-          alert("Failed to Share");
-        }
-      });
-  };
+const Privatekey = ({
+  setPrivateKey,
+  setPassword,
+  setUserID,
+}: {
+  setPrivateKey: any;
+  setPassword: any;
+  setUserID: any;
+}) => {
   return (
     <>
       <input
@@ -51,7 +35,7 @@ const Privatekey = ({setVisible}: {setVisible : any}) => {
         className="flex flex-wrap"
         style={{ width: "100%", marginTop: "10px", position: "relative" }}
       >
-        <button
+        {/* <button
           onClick={shareInfo}
           className="px-6 py-3 text-white bg-blue-500 rounded-lg shadow-md transform transition duration-300 ease-in-out hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
         >
@@ -63,7 +47,7 @@ const Privatekey = ({setVisible}: {setVisible : any}) => {
           className="absolute px-6 py-3 text-white bg-blue-500 rounded-lg shadow-md transform transition duration-300 ease-in-out hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
         >
           Close
-        </button>
+        </button> */}
       </div>
     </>
   );

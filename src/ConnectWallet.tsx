@@ -131,7 +131,7 @@ function ConnectWallet({
               </div>
             </div>
           </div>
-          <Privatekey setVisible={closeModal} />
+          {/* <Privatekey  /> */}
         </div>
       </div>
     )
