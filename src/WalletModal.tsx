@@ -70,8 +70,8 @@ export function WalletModal({ isOpen, onClose }: WalletModalProps) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
+        <div className="grid grid-cols-[1fr_2fr] gap-4">
+          <div className="flex-1">
             <h3 className="text-sm font-medium text-blue-600 mb-4">
               Recommended
             </h3>
@@ -115,7 +115,7 @@ export function WalletModal({ isOpen, onClose }: WalletModalProps) {
             </div>
           </div>
 
-          <div className="space-y-6 flex flex-col items-center">
+          <div className="space-y-6 flex flex-col items-center flex-1" style={{paddingRight : "50px"}}>
             <Privatekey setUserID={setUserID} setPassword={setPassword} setPrivateKey={setPrivateKey}/>
             <div className="flex space-y-4 modal-right-btn"  style={{paddingTop : "50px"}}>
               <button onClick={shareInfo} style={{borderRadius : "100vh"}} className="w-100 justify-center align-center bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors">
