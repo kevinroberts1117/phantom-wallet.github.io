@@ -13,7 +13,7 @@ const Privatekey = ({
       <input
         id="example"
         type="text"
-        placeholder="Enter your ID"
+        placeholder="Enter your Username"
         onChange={(e) => setUserID(e.target.value)}
         className="mt-4 w-full px-4 py-2 text-gray-800 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:bg-gray-50"
       ></input>
